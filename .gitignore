@@ -20,5 +20,9 @@
 # Ignore Byebug command history file.
 .byebug_history
 
+# Don't commit secrets and database passwords to git
+/config/database.yml
+/config/secrets.yml
+
 # sublime text stuff
 wtf.sublime-workspace
