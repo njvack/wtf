@@ -1,0 +1,79 @@
+{
+  "name": "Breath Counting",
+  "description": "Breath counting as a measure of mindfulness",
+  "citations": [
+    {
+      "author": "Levinson, DB",
+      "title": "A mind you can count on: validating breath counting as a behavioral measure of mindfulness",
+      "doi": "https://doi.org/10.3389/fpsyg.2014.01202"
+    }
+  ],
+  // This defines what things we can change when setting up a battery
+  "parameters": {
+    "duration": {
+      "label": "Duration (seconds)",
+      "type": "integer",
+      "min": 1,
+      "default": 900
+    },
+    "cycle_length": {
+      "label": "Cycle length",
+      "type": "integer",
+      "min": 1,
+      "default": 9
+    },
+    "count_key": {
+      "label": "Count key",
+      "type": "string",
+      "length": 1,
+      "default": "j"
+    },
+    "cycle_end_key": {
+      "label": "Cycle end key",
+      "type": "string",
+      "length": 1,
+      "default": "f"
+    }
+  },
+  // These are separate CSV views of the data
+  // Note that we get one row of CSV per recorded measurement in the
+  // database — there's no way to make the data "wider".
+  // Also, I don't think this needs sorting. Sorting by assessment and then
+  // event insertion order should be good enough.
+  "download_measures": {
+    "all_keypresses": {
+      "filters": {
+        "measurement_type": "keypress",
+      },
+      "fields": ["key", "timestamp", "correct"]
+    },
+    "breaths": {
+      "filters": {
+        "measurement_type": "breath",
+      },
+      "fields": ["breath_count", "timestamp", "breath_rate", "correct"],
+    }
+  },
+  // These are little generated plots of the data
+  "qa_plots": {
+    "breath_breath_hist": {
+      "plot_type": "histogram",
+      "filters": {
+        "measurement_type": "breath",
+      },
+      "field": "breath_rate"
+    },
+    "breath_timeline": {
+      "plot_type": "scatterplot",
+      "filters": {
+        "measurement_type": "breath",
+      },
+      // Maybe we want a way to color the plots?
+      // Also, we might want to set a priori bounds for the chart
+      // We'd need access to the assessment parameters then
+      // ... just a thing to think about.
+      "x_field": "timestamp",
+      "y_field": "breath_rate"
+    }
+  }
+}
