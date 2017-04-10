@@ -1,0 +1,50 @@
+{
+  // Manifest file for face rating task
+  // This task shows a face with two sliders:
+  // * do you remember this person?
+  // * do you like this person?
+  // You get two floating-point numbers between 0 and 1
+  // There are also four "check" images, with text saying where people should
+  // set the ratings. For those images, the instrument will record whether
+  // people have marked correctly or not.
+
+  "name": "Face Rating: Memory and Likability",
+  "description": "Rate faces on whether they're old or new, and how much you like them",
+  // This instrument has no citations
+  // It also has no parameters; everything is defined in the javascript
+  "url": "https://github.com/something",
+  "download_measures": {
+    "remembered_and_liked": {
+      "filters": {"measurement_type": "face_rating"},
+      "fields": ["image", "remembered", "liked"]
+    }
+  },
+  "qa_plots": {
+    "mem_hist": {
+      "plot_type": "histogram",
+      "filters": {"measurement_type": "face_rating"},
+      "field": "remembered",
+      "min": 0,
+      "max": 1
+    },
+    "like_hist": {
+      "plot_type": "histogram",
+      "filters": {"measurement_type": "face_rating"},
+      "field": "liked",
+      "min": 0,
+      "max": 1
+    },
+    "check_validation": {
+      // The checks will go in as two rows, as opposed to the regular images
+      // which go in as one.
+      "plot_type": "status_lights",
+      "filters": {"measurement_type": "check_image"},
+      "field": "passed",
+      "status_values": {
+        "true": "pass",
+        "false": "fail"
+      },
+      "label_field": "check_message",
+    }
+  }
+}
