@@ -8,6 +8,10 @@
       "doi": "https://doi.org/10.3389/fpsyg.2014.01202"
     }
   ],
+  "authors": [
+    {"name": "Nate Vack", "email": "njvack@wisc.edu"}
+  ],
+  "url": "https://some_url.edu",
   // This defines what things we can change when setting up a battery
   "parameters": {
     "duration": {
@@ -75,5 +79,9 @@
       "x_field": "timestamp",
       "y_field": "breath_rate"
     }
+    // It might also make sense to include things like mean values
+    // here?
+    // Laying out QA plots and such may be a problem. But I really
+    // don't want to write a QA language...
   }
 }
