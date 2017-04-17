@@ -1,6 +1,7 @@
 {
+  // Manifest for the breath counting task.
   "name": "Breath Counting",
-  "description": "Breath counting as a measure of mindfulness",
+  "description": "Breath counting as a measure of mindfulness. In this task, particpants repeatedly count cycles of breaths, pressing one key for most breaths and another key at the end of the cycle. For example, for a cycle count of 9, participants would press one key for eight breaths and another key on the ninth.",
   "citations": [
     {
       "author": "Levinson, DB",
