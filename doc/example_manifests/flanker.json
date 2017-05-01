@@ -1,0 +1,59 @@
+{
+  "name": "Eriksen Flanker Task",
+  "version": "0.0.1dev",
+  "description": "Test participants' ability to contextually suppress responses, through congruent, incongruent, and neutral trials.",
+  "load_page": "index.html",
+  "parameters": {
+    "conrgruent_trials": {
+      "label": "Congruent trials",
+      "type": "integer",
+      "min": 0,
+      "default": 30
+    },
+    "incongruent_trials": {
+      "label": "Incongruent trials",
+      "type": "integer",
+      "min": 0,
+      "default": 30
+    },
+    "neutral_trials": {
+      "label": "Neutral trials",
+      "type": "integer",
+      "min": 0,
+      "default": 30
+    }
+  },
+  "download_measures": {
+    "all_responses": {
+      "filters": {"measurement_type": "response"},
+      "fields": ["trial_type", "reaction_time", "correct"]
+    },
+    "summary": {
+      "filters": {"measurement_type": "summary"},
+      "fields": [
+        "congruent_reaction_time",
+        "incongruent_reaction_time",
+        "neutral_reaction_time",
+        "correct_percentage",
+      ]
+    }
+  },
+  "qa_plots": {
+    "congruence_histograms": {
+      // Try three histograms on one plot, faceting on the "trial_type" field
+      "plot_type": "histogram",
+      "title": "Response time by trial type",
+      "filters": {"measurement_type": "response"},
+      "field": "reaction_time",
+      "facet_by": "trial_type"
+    },
+    // We might also want to show labeled numeric values? Maybe they look like
+    "incon_minus_con": {
+      // Hm what happens if we get multiple results?
+      "plot_type": "value",
+      "label": "Incongruent - Congruent",
+      "filters": {"measurement_type": "summary"},
+      "field": "reaction_time_incongruent_minus_congruent"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Color Stroop",
+  "description": "Measure reaction time differences between stimuli where the name of a color and the color of the word match, and when they do not.",
+  "authors": [
+    {"name": "Nate Vack", "email":"njvack@wisc.edu"}
+  ],
+  "url": "https://example.com",
+  "parameters": {
+    "congruent_trials": {
+      "label": "Congruent trials",
+      "type": "integer",
+      "min": 1,
+      "default": 30
+    },
+    "incongruent_trials": {
+      "label": "Incongruent trials",
+      "type": "integer",
+      "min": 1,
+      "default": 30
+    },
+    "neutral_trials": {
+      "label": "Neutral trials",
+      "type": "integer",
+      "min": 1,
+      "default": 30
+    }
+  }
+  // This winds up being the same set of things as the flanker task, really...
+  // not gonna make more of this until there's an implementation.
+}

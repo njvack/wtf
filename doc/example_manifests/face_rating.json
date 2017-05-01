@@ -9,10 +9,12 @@
   // people have marked correctly or not.
 
   "name": "Face Rating: Memory and Likability",
+  "version": "1.0.0",
   "description": "Rate faces on whether they're old or new, and how much you like them",
   // This instrument has no citations
   // It also has no parameters; everything is defined in the javascript
   "url": "https://github.com/something",
+  "load_page": "index.html",
   "download_measures": {
     "remembered_and_liked": {
       "filters": {"measurement_type": "face_rating"},

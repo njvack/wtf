@@ -1,6 +1,7 @@
 {
   // Manifest for the breath counting task.
   "name": "Breath Counting",
+  "version": "1.0.1",
   "description": "Breath counting as a measure of mindfulness. In this task, particpants repeatedly count cycles of breaths, pressing one key for most breaths and another key at the end of the cycle. For example, for a cycle count of 9, participants would press one key for eight breaths and another key on the ninth.",
   "citations": [
     {
@@ -14,6 +15,7 @@
   ],
   "url": "https://some_url.edu",
   // This defines what things we can change when setting up a battery
+  "load_page": "index.html",
   "parameters": {
     "duration": {
       "label": "Duration (seconds)",
@@ -60,6 +62,7 @@
     }
   },
   // These are little generated plots of the data
+  // We might want an idea of single-ppt versus group plots?
   "qa_plots": {
     "breath_breath_hist": {
       "plot_type": "histogram",

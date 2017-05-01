@@ -1,0 +1,27 @@
+{
+  "name": "Meditation Timer",
+  "version": "0.0.1dev",
+  "description": "A simple meditation timer, intended to be used over many days",
+  "authors": [
+    {"name": "Nate Vack", "email": "njvack@wisc.edu"},
+    {"name": "Dan Grupe", "email": "grupe@wisc.edu"}
+  ],
+  "timeout_days": 30,  // This is the number of days that will pass before assessments are considered "abandoned"
+  "url": "https://github.com/njvack/meditation_timer_instrument",
+  "load_page": "index.html",
+  "download_measures": {
+    "practices": {
+      "filters": {
+        "measurement_type": "practice",
+        "fields": ["started_at", "stopped_at", "duration", "practice_type"]
+      }
+    }
+  },
+  "qa_plots": {
+    "duration_hist": {
+      "plot_type": "histogram",
+      "filters": {"measurement_type": "practice"},
+      "field": "duration"
+    }
+  }
+}
