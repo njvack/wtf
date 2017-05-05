@@ -45,7 +45,7 @@ The researcher view assumes shiny new browsers running on desktop computers. Lik
 
 The participant view will be much more conservative — all *required* components should work on old, terrible browsers (say, IE6). Which instruments work on what platforms will solely depend on the design of individual instruments.
 
-### Special deployment stuff
+### Security considerations
 
 This app is going to write stuff to your filesystem, not just to the database. In particular, it's going to extract .zip files and/or load git reposotories onto your system. This means there's the potential for path traversal exploits (either via relative paths or symlinks) to ruin your day. We'll try to mitigate those up-front, but I'd recommend the following to further mitigate:
 
