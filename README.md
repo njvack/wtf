@@ -44,3 +44,10 @@ Server-side, this is a pretty standard app. Rails 5, ruby 2.4. The one somewhat 
 The researcher view assumes shiny new browsers running on desktop computers. Like, we'll use grid layout(!), assume proper javascript, and so on. Shiny af.
 
 The participant view will be much more conservative — all *required* components should work on old, terrible browsers (say, IE6). Which instruments work on what platforms will solely depend on the design of individual instruments.
+
+### Special deployment stuff
+
+This app is going to write stuff to your filesystem, not just to the database. In particular, it's going to extract .zip files and/or load git reposotories onto your system. This means there's the potential for path traversal exploits (either via relative paths or symlinks) to ruin your day. We'll try to mitigate those up-front, but I'd recommend the following to further mitigate:
+
+1. Run the app server as a user who does not have write access to the app's code. This means that if someone manages to write a file where it doesn't belong, they can't directly make your server execute arbitrary code.
+2: Ensure that your web server does not follow symlinks. Symlinks aren't allowed in instruments (and we'll raise an error if we find one) but should one sneak in, having your web server refuse to serve symlinks will make things even safer.
