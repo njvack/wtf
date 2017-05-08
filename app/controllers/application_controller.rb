@@ -1,3 +1,4 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery :with => :exception
+  # Note that we are not protecting from forgery here
+  # Participants will see non-namespaced URLs
 end
