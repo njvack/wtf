@@ -50,4 +50,4 @@ The participant view will be much more conservative — all *required* component
 This app is going to write stuff to your filesystem, not just to the database. In particular, it's going to extract .zip files and/or load git reposotories onto your system. This means there's the potential for path traversal exploits (either via relative paths or symlinks) to ruin your day. We'll try to mitigate those up-front, but I'd recommend the following to further mitigate:
 
 1. Run the app server as a user who does not have write access to the app's code. This means that if someone manages to write a file where it doesn't belong, they can't directly make your server execute arbitrary code.
-2: Ensure that your web server does not follow symlinks. Symlinks aren't allowed in instruments (and we'll raise an error if we find one) but should one sneak in, having your web server refuse to serve symlinks will make things even safer.
+2. Ensure that your web server does not follow symlinks. Symlinks aren't allowed in instruments (and we'll raise an error if we find one) but should one sneak in, having your web server refuse to serve symlinks will make things even safer.
