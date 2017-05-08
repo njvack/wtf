@@ -1,0 +1,15 @@
+{
+  "name": "Message",
+  "version": "1.0.1",
+  "description": "A simple HTML message",
+  "authors": [
+    {"name": "Nate Vack", "email": "njvack@wisc.edu"}
+  ],
+  "load_page": "index.html",
+  "parameters": {
+    "message": {
+      "label": "message",
+      "type": "html"
+    }
+  }
+}
