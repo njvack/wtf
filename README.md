@@ -1,3 +1,7 @@
+# Note: Abandoned Project
+
+Due to time constraints, this project is not under active development and will not be in the foreseeable future. It doesn't work and you should not use it.
+
 # README
 
 The Web Task Framework is designed to make it easy to define and administer web-based psychological tasks. Think of it roughly as a hosted type of Experiment Factory. It focus is traditionally-recruited research participants rather than a tight integration with Amazon's Mechanical Turk (although it should work with MTurk).
